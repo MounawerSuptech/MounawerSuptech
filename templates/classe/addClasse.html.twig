@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/container-css.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/department.js') }}"></script>
+
+{% endblock %}
+{% block body %}
+    <div class="container-xl">
+        {{ form (addClasse) }}
+    </div>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

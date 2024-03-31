@@ -1,0 +1,18 @@
+{%  extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/container-css.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/department.js') }}"></script>
+
+{% endblock %}
+{% block title %}UPDATE DEPARTEMENT{% endblock %}
+{% block body %}
+    <div class="container-xl">
+        <h1>UPDATE DEPARTEMENT</h1>
+        {{ form(updateDepartment) }}
+    </div>
+
+{% endblock %}

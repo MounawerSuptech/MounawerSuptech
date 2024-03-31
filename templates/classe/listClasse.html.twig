@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/container-css.css') }}">
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+{% endblock %}
+{% block body %}
+<div class="container-xl">
+
+    <a href="{{ path('addClasse') }}" class="btn btn-primary">Ajouter une classe</a>
+    <table  class="table" id="myTable" >
+        <thead>
+        <tr class="tab-content">
+        <td>
+            <th scope="col">NOM DE LA CLASSE</th>
+        </td>
+        <td>
+            <th scope="col">NOM DU DEPARTEMENT</th>
+        </td>
+        <td>
+        <th scope="col">ACTION</th>
+        </td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for classe in tabClasse %}
+            <tr class="table-{% if loop.index is odd %}danger{% else %}warning{% endif %}">
+            <td>
+                <th scope="row">{{ classe.nomClasse }}</th>
+            </td>
+            <td>
+                <th scope="row">{{ classe.department.nomDepartment }}</th>
+            </td>
+            <td>
+                <th scope="row">
+                <a href="{{ path('updateClasse', {'id': classe.id}) }}" class="btn btn-primary">Modifier</a>
+                <a href="{{ path('deleteClasse', {'id': classe.id}) }}" class="btn btn-danger">Supprimer</a>
+                </th>
+            </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <div class="pagination flex justify-content-center mb-8 ">
+        {{ knp_pagination_render(tabClasse) }}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

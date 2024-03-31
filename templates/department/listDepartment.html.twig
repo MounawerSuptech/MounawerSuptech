@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/container-css.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('.assets/js/scripts.js') }}"></script>
+
+{% endblock %}
+
+
+{% block title %}Liste des départements{% endblock %}
+
+{% block body %}
+<div class="container-xl">
+
+<a href="{{ path('addDepartment') }}" class="btn btn-primary">Ajouter un département</a>
+<table id="dtBasicExample" class="table ">
+    <thead>
+    <tr>
+        <td>
+        <th scope="col">NOM DU DEPARTEMENT</th>
+        </td>
+        <td>
+        <th scope="col">ACTION</th>
+        </td>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for department in tabDepartment %}
+    <tr class="table-{% if loop.index is odd %}danger{% else %}warning{% endif %}">
+        <TD>
+        <th scope="row">{{ department.nomDepartment }}</th>
+        </TD>
+        <td>
+        <th scope="row">
+            <a href="{{ path('updateDepartment', {'id': department.id}) }}" class="btn btn-primary">Modifier</a>
+            <a href="{{ path('deleteDepartment', {'id': department.id}) }}" class="btn btn-danger">Supprimer</a>
+        </th>
+        </td>
+
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+    <div class="pagination flex justify-content-center mb-8 ">
+        {{ knp_pagination_render(tabDepartment) }}
+    </div>
+
+</div>
+{% endblock %}
+
+
+

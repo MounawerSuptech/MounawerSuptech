@@ -1,0 +1,72 @@
+.container-xl {
+    padding: 70px 0px;
+    padding-left: center;
+    padding-right: center;
+}
+.btn-primary {
+    background-color: #20c997;
+    border-color: #20c997;
+    color: #ffffff;
+}
+
+.bg-body {
+    background-image:url("../images/pang-yuhao-_kd5cxwZOK4-unsplash.jpg");
+}
+body{
+
+    background-color: #eee;
+}
+
+table th , table td{
+    text-align: center;
+}
+
+table tr:nth-child(even){
+    background-color: #e4e3e3
+}
+
+th {
+    background: #333;
+    color: #fff;
+}
+
+
+.header_wrap {
+    padding:30px 0;
+}
+.num_rows {
+    width: 20%;
+    float:left;
+}
+.tb_search{
+    width: 20%;
+    float:right;
+}
+
+.rows_count {
+    width: 20%;
+    float:right;
+    text-align:right;
+    color: #999;
+}
+.pagination {
+    display:inline-list-item;
+}
+
+.pagination a {
+    color: black;
+    float: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #20c997;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color:#20c997;}

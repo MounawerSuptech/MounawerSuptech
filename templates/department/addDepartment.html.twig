@@ -1,0 +1,18 @@
+{%  extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/container-css.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/department.js') }}"></script>
+
+{% endblock %}
+{% block title %}Add Department{% endblock %}
+{% block body %}
+    <div class="container-xl">
+        <h1>Add Department</h1>
+        {{ form(addDepartment) }}
+    </div>
+
+{% endblock %}
